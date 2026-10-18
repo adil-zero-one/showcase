@@ -414,7 +414,7 @@ export const es: Dict = {
     cvLanguage: 'Idioma del CV',
     phone: 'Teléfono',
     emailLabel: 'Correo',
-    localTime: 'Hora local en Reus',
+    localTime: 'Hora local en Tarragona',
     cvNames: {
       ca: 'Català',
       es: 'Español',

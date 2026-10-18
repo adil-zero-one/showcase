@@ -417,7 +417,7 @@ export const en = {
     cvLanguage: 'CV language',
     phone: 'Phone',
     emailLabel: 'Email',
-    localTime: 'Local time in Reus',
+    localTime: 'Local time in Tarragona',
     cvNames: {
       ca: 'Català',
       es: 'Español',
