@@ -1,7 +1,7 @@
 import { useCallback, useLayoutEffect, useRef, useState } from 'react';
 import { useI18n } from '../i18n';
 import { FEATURED, PROJECTS, type Project, type ProjectId } from '../data/projects';
-import { gsap } from '../lib/gsap';
+import { gsap, ScrollTrigger } from '../lib/gsap';
 import { goTo } from '../lib/smooth';
 import { useReducedMotion } from '../hooks/useReducedMotion';
 import { useLineReveal } from '../hooks/useLineReveal';
@@ -37,14 +37,29 @@ export function Projects() {
     const ctx = gsap.context(() => {
       const mm = gsap.matchMedia();
       mm.add('(min-width: 900px)', () => {
+        const wrap = el.querySelector<HTMLElement>('.pcards');
         const cards = gsap.utils.toArray<HTMLElement>('.pcard');
-        cards.forEach((card, i) => {
-          if (i === cards.length - 1) return;
-          const next = cards[i + 1];
-          const st = { trigger: next, start: 'top 92%', end: 'top 14%', scrub: true };
-          gsap.to(card, { scale: 0.93, transformOrigin: '50% 0%', ease: 'none', scrollTrigger: st });
-          gsap.to(card.querySelector('.pcard__dim'), { opacity: 0.6, ease: 'none', scrollTrigger: st });
-        });
+        if (!wrap || cards.length < 2) return;
+        const dims = cards.map((c) => c.querySelector<HTMLElement>('.pcard__dim'));
+        // The dimming of a card is read from where the next card really is on screen (0 while that card is
+        // still below, 1 once it has slid over). Nothing is measured in advance, so a refresh, a language
+        // change or a resize can never leave a card stuck dimmed.
+        const apply = () => {
+          const vh = window.innerHeight;
+          for (let i = 0; i < cards.length - 1; i++) {
+            const top = cards[i + 1].getBoundingClientRect().top;
+            const p = gsap.utils.clamp(0, 1, (0.92 * vh - top) / (0.78 * vh));
+            cards[i].style.scale = String(1 - 0.07 * p);
+            const d = dims[i];
+            if (d) d.style.opacity = String(0.6 * p);
+          }
+        };
+        const st = ScrollTrigger.create({ trigger: wrap, start: 'top bottom', end: 'bottom top', onUpdate: apply, onRefresh: apply, onToggle: apply });
+        apply();
+        return () => {
+          st.kill();
+          cards.forEach((c, i) => { c.style.scale = ''; const d = dims[i]; if (d) d.style.opacity = ''; });
+        };
       });
     }, el);
     return () => ctx.revert();
