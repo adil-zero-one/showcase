@@ -1,0 +1,102 @@
+.hero {
+  --fs: 200px;
+  position: relative;
+  height: 100svh;
+  min-height: 640px;
+  overflow: hidden;
+  background: var(--cobalt);
+  color: var(--white);
+  touch-action: pan-y;
+  isolation: isolate;
+}
+.hero__glow {
+  position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background:
+    radial-gradient(60% 55% at 50% 62%, rgba(120, 140, 255, 0.55), transparent 70%),
+    radial-gradient(40% 40% at 8% 100%, rgba(7, 10, 28, 0.35), transparent 70%),
+    radial-gradient(40% 40% at 100% 0%, rgba(7, 10, 28, 0.25), transparent 70%);
+}
+.hero::after {
+  /* fine grain, so the flat blue has a printed feel */
+  content: ''; position: absolute; inset: 0; z-index: 4; pointer-events: none; opacity: 0.16; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .9 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+.hero__parallax {
+  position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  transform: translate3d(calc(var(--px, 0) * 16px), calc(var(--py, 0) * 8px), 0);
+  will-change: transform;
+}
+.hero__name {
+  position: absolute;
+  left: var(--gutter); right: var(--gutter);
+  top: calc(var(--nav-h) + clamp(18px, 4svh, 56px));
+  display: flex; gap: 0.2em;
+  font-family: var(--font-display);
+  font-size: var(--fs);
+  font-weight: 700; font-stretch: 75%;
+  line-height: 0.84;
+  letter-spacing: 0;
+  white-space: nowrap;
+  color: var(--white);
+}
+.hero__word { display: flex; clip-path: inset(0 -100vw); padding-block: 0.02em; }
+.hero--measure .hero__ch { width: auto !important; }
+.hero__ch {
+  display: inline-block; width: calc(var(--cw, 0.5) * 1em); text-align: center;
+  font-variation-settings: 'wdth' 75, 'wght' 640;
+  will-change: font-variation-settings;
+}
+@media (max-width: 899px) {
+  .hero__name { flex-direction: column; gap: 0; }
+}
+
+.hero__portrait { position: absolute; inset: 0; z-index: 2; pointer-events: none; }
+.portrait-gl { position: absolute; inset: 0; }
+.portrait-fallback {
+  position: absolute; left: 50%; bottom: 0; transform: translateX(-50%);
+  height: 76%; width: auto; max-width: none;
+}
+
+.hero__ui {
+  position: absolute; inset: 0; z-index: 3; pointer-events: none;
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: end;
+  padding: 0 var(--gutter) clamp(24px, 5svh, 56px);
+  gap: 2rem;
+}
+.hero__left, .hero__right { display: grid; gap: 1.1rem; align-content: end; }
+.hero__left { justify-items: start; max-width: 28rem; }
+.hero__right { justify-items: end; text-align: right; }
+.hero__ui a, .hero__ui button { pointer-events: auto; }
+.hero__role { font: 700 1.2rem/1.2 var(--font-display); font-stretch: 85%; }
+.hero__intro { font-size: clamp(1.1rem, 0.95rem + 0.5vw, 1.35rem); line-height: 1.4; color: var(--fg-dim); }
+.hero__cta { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 0.4rem; }
+.hero__avail {
+  display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.55rem 1rem;
+  border-radius: 999px; background: rgba(7, 10, 28, 0.55); backdrop-filter: blur(8px);
+  font: 600 0.95rem var(--font-display);
+}
+.hero__place { font: 500 1rem var(--font-display); color: var(--fg-dim); }
+.hero__hint { font: 500 0.95rem var(--font-display); color: var(--lime); }
+
+.dot { position: relative; width: 9px; height: 9px; border-radius: 50%; background: var(--lime); flex: none; }
+.dot::after {
+  content: ''; position: absolute; inset: -5px; border-radius: 50%; border: 1.5px solid var(--lime);
+  opacity: 0; animation: ping 3.2s ease-out infinite;
+}
+@keyframes ping { 0% { transform: scale(0.5); opacity: 0.7; } 70%, 100% { transform: scale(1.5); opacity: 0; } }
+
+@media (max-width: 899px) {
+  .hero__ui {
+    grid-template-columns: 1fr; align-content: end; gap: 1rem;
+    padding-top: 6rem; isolation: isolate;
+  }
+  /* the dark scrim sits behind the copy only, so the name above stays pure white */
+  .hero__ui::before {
+    content: ''; position: absolute; left: 0; right: 0; bottom: 0; z-index: -1; height: min(52%, 460px);
+    background: linear-gradient(to top, rgba(7, 10, 28, 0.94) 0%, rgba(7, 10, 28, 0.78) 55%, transparent 100%);
+  }
+  .hero__right { justify-items: start; text-align: left; grid-auto-flow: column; justify-content: space-between; align-items: center; }
+  .hero__hint, .hero__place { display: none; }
+  .hero__left { max-width: none; }
+}

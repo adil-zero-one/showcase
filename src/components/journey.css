@@ -1,0 +1,29 @@
+.journey { background: var(--lime); color: var(--ink); }
+.jr__pin { position: relative; overflow: clip; padding-block: clamp(80px, 12vh, 140px); }
+.jr__bar { position: absolute; left: 0; right: 0; top: 0; height: 8px; background: var(--ink); transform: scaleX(0); transform-origin: left; }
+.jr__layout { display: grid; gap: clamp(2rem, 5vh, 3.5rem); }
+.jr__head { display: grid; gap: 1.2rem; padding-inline: var(--gutter); max-width: 62rem; }
+.jr__title { font-size: clamp(2.8rem, 1.2rem + 6.2vw, 8rem); text-wrap: balance; color: var(--ink); }
+.journey .lede { color: rgba(7, 10, 28, 0.82); }
+.jr__track { display: grid; gap: 14px; padding-inline: var(--gutter); }
+.jr__item {
+  display: grid; gap: 0.7rem; align-content: start; padding: clamp(20px, 2.4vw, 34px); border-radius: var(--r-card);
+  background: var(--ink); color: var(--white); min-width: 0;
+}
+.jr__item[data-current='true'] { background: var(--cobalt); }
+.jr__period { font: 600 1rem var(--font-mono); color: var(--lime); }
+.jr__role { font: 720 clamp(1.5rem, 1.1rem + 1.2vw, 2.3rem) / 1.08 var(--font-display); font-stretch: 90%; }
+.jr__org { font: 600 1.1rem var(--font-display); color: rgba(255, 255, 255, 0.85); }
+.jr__text { font-size: 1.15rem; line-height: 1.5; color: rgba(255, 255, 255, 0.86); }
+.jr__item--lang { background: var(--white); color: var(--ink); }
+.jr__langs { display: grid; gap: 0.5rem; }
+.jr__langs li { display: flex; justify-content: space-between; gap: 1rem; padding-bottom: 0.5rem; border-bottom: 1.5px solid rgba(7, 10, 28, 0.25); }
+.jr__ln { font: 700 1.3rem var(--font-display); }
+.jr__ll { font: 500 1rem var(--font-display); color: rgba(7, 10, 28, 0.78); text-align: right; }
+@media (min-width: 960px) and (min-height: 640px) {
+  .jr__pin { min-height: 100svh; display: grid; align-items: center; padding-block: clamp(70px, 9vh, 110px) clamp(30px, 5vh, 60px); }
+  .jr__track { display: flex; width: max-content; gap: 18px; will-change: transform; }
+  .jr__item { width: clamp(340px, 30vw, 480px); min-height: min(38svh, 340px); }
+  .jr__item--lang { width: clamp(320px, 26vw, 420px); }
+}
+@media (max-width: 959px), (max-height: 639px) { .jr__pin { padding-bottom: clamp(60px, 10vh, 120px); } }

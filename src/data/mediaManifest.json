@@ -1,0 +1,147 @@
+{
+ "projects/supplier/dark-cards.webp": [
+  1015,
+  1057
+ ],
+ "projects/supplier/light-table.webp": [
+  1600,
+  932
+ ],
+ "projects/gym/landing.webp": [
+  1224,
+  1059
+ ],
+ "projects/gym/dashboard.webp": [
+  1228,
+  1053
+ ],
+ "projects/gym/categories.webp": [
+  1155,
+  943
+ ],
+ "projects/gym/categories-more.webp": [
+  1155,
+  850
+ ],
+ "projects/gym/edit-category.webp": [
+  1243,
+  1059
+ ],
+ "projects/gym/exercises.webp": [
+  1197,
+  958
+ ],
+ "projects/gym/login-dark.webp": [
+  1222,
+  1036
+ ],
+ "projects/banners/banner-1.webp": [
+  1600,
+  500
+ ],
+ "projects/banners/banner-2.webp": [
+  1600,
+  500
+ ],
+ "projects/banners/banner-3.webp": [
+  1600,
+  500
+ ],
+ "projects/venuepulse/1.webp": [
+  487,
+  913
+ ],
+ "projects/venuepulse/2.webp": [
+  652,
+  775
+ ],
+ "projects/venuepulse/3.webp": [
+  706,
+  922
+ ],
+ "projects/venuepulse/4.webp": [
+  729,
+  667
+ ],
+ "projects/venuepulse/5.webp": [
+  718,
+  853
+ ],
+ "projects/venuepulse/6.webp": [
+  592,
+  532
+ ],
+ "projects/botradar/1.webp": [
+  1111,
+  481
+ ],
+ "projects/botradar/2.webp": [
+  1096,
+  1002
+ ],
+ "media/showreel/beats-banner.webp": [
+  1280,
+  400
+ ],
+ "media/showreel/croissant-ad.webp": [
+  1280,
+  720
+ ],
+ "media/showreel/calamari-ad.webp": [
+  1280,
+  720
+ ],
+ "media/showreel/map-route.webp": [
+  1280,
+  720
+ ],
+ "media/showreel/presenter-3d.webp": [
+  1280,
+  720
+ ],
+ "media/showreel/ae-lighting.webp": [
+  1280,
+  720
+ ],
+ "media/showreel/truenas-tutorial.webp": [
+  1280,
+  720
+ ],
+ "__clips__": {
+  "beats-banner": {
+   "duration": 17.3,
+   "width": 1280,
+   "height": 400
+  },
+  "croissant-ad": {
+   "duration": 14.2,
+   "width": 1280,
+   "height": 720
+  },
+  "calamari-ad": {
+   "duration": 4.9,
+   "width": 1280,
+   "height": 720
+  },
+  "map-route": {
+   "duration": 15.0,
+   "width": 1280,
+   "height": 720
+  },
+  "presenter-3d": {
+   "duration": 15.8,
+   "width": 1280,
+   "height": 720
+  },
+  "ae-lighting": {
+   "duration": 14.0,
+   "width": 1280,
+   "height": 720
+  },
+  "truenas-tutorial": {
+   "duration": 60.6,
+   "width": 1280,
+   "height": 720
+  }
+ }
+}

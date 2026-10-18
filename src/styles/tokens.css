@@ -1,0 +1,34 @@
+:root {
+  /* Colour: cobalt is the home ground, lime is the "live" signal, ink and paper are the quiet blocks. */
+  --cobalt: #2236ff;
+  --cobalt-deep: #1423c4;
+  --ink: #070a1c;
+  --ink-2: #0e1330;
+  --paper: #e9ecf3;
+  --white: #ffffff;
+  --lime: #d3ff3b;
+
+  --font-display: 'Bricolage Grotesque Variable', 'Arial Narrow', system-ui, sans-serif;
+  --font-body: 'Newsreader Variable', Georgia, 'Times New Roman', serif;
+  --font-mono: 'Geist Mono Variable', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --gutter: clamp(20px, 4.2vw, 72px);
+  --section-y: clamp(96px, 16vh, 200px);
+  --nav-h: 76px;
+  --r-card: clamp(22px, 2.6vw, 38px);
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-io: cubic-bezier(0.76, 0, 0.24, 1);
+
+  /* text colours that sections override */
+  --fg: var(--white);
+  --fg-dim: rgba(255, 255, 255, 0.74);
+  --bg: var(--ink);
+  --focus: var(--lime);
+}
+
+.on-light {
+  --fg: var(--ink);
+  --fg-dim: rgba(7, 10, 28, 0.72);
+  --focus: var(--cobalt);
+}

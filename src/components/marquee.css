@@ -1,0 +1,14 @@
+.marquee { overflow-x: clip; position: relative; z-index: 6; height: clamp(70px, 9vw, 130px); margin-top: -1px; background: var(--paper); }
+.marquee__band {
+  position: absolute; left: -3vw; right: -3vw; top: 50%; transform: translateY(-50%) rotate(-1.8deg);
+  background: var(--lime); color: var(--ink); overflow: hidden;
+  padding-block: clamp(10px, 1.6vw, 22px);
+  box-shadow: 0 0 0 1px rgba(7, 10, 28, 0.2);
+}
+.marquee__track { display: flex; width: max-content; will-change: transform; }
+.marquee__row { display: flex; flex: none; }
+.marquee__item {
+  display: inline-flex; align-items: center; gap: clamp(1rem, 2.5vw, 2.5rem); padding-right: clamp(1rem, 2.5vw, 2.5rem);
+  font: 780 clamp(2rem, 5.2vw, 4.8rem) / 1 var(--font-display); font-stretch: 75%; white-space: nowrap;
+}
+.marquee__star { width: 0.6em; height: 0.6em; color: var(--cobalt); flex: none; }
