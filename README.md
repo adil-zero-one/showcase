@@ -27,11 +27,11 @@ Node 20+ (CI uses 22).
 | Cursor | Dot and ring, labelled on interactive things, with magnetic buttons. |
 | Marquee | Speeds up and reverses with your scroll velocity. |
 | Manifesto | The statement fills in word by word, scrubbed by scroll; four counted facts. |
-| ScoutWand | Pinned on desktop: the scroll plays an illustrated flow (type, scout, auto-fill). |
-| Work | Cards stack and dim as the next arrives; hover a screenshot to open a lens onto how it is built; an index with a hover preview; case studies in a native `<dialog>`. |
-| Showreel | The video frame opens from a small window to full width on scroll. Nothing loads until Play. |
+| ScoutWand | Pinned on every screen size: the scroll types a search into a working replica of the app window, streams the offers in and runs Auto-Fill. Touch the window and the tour hands over: it becomes a small live app on invented example offers. A button opens the real screen recording. |
+| Work | Cards stack and dim as the next arrives (desktop); on phones each card rises into place and its screenshot drifts; hover a screenshot to open a lens onto how it is built; an index with a hover preview; case studies in a native `<dialog>`. |
+| Showreel | A theatre: the player stays in view while you choose (beside the list on wide screens, pinned under the navigation on phones). The featured Showreel and the ScoutWand demo come first. Nothing loads until a clip is chosen. |
 | Stack | A lime lens passes over the technology words; the border style tells you how much proof there is behind each one. |
-| Journey | Pinned horizontal timeline (vertical list on narrow screens), progress bar on top. |
+| Journey | Pinned horizontal timeline on every screen at least 700px tall (phones included), progress bar on top; a vertical list on shorter screens. |
 | Contact | Seven lines draw themselves and converge on the "Send an email" button. |
 
 Fallbacks: touch devices get tap-to-reveal instead of hover lenses; `prefers-reduced-motion` turns off Lenis, the shader, pinning and scrubbing and renders a static portrait with every section in its final state.
@@ -44,10 +44,11 @@ src/
   components/          one component (+ css) per section; PortraitGL.tsx is the WebGL hero
   data/                facts: projects.ts, stack.ts, showreel.ts, experience.ts, site.ts, mediaManifest.json
   i18n/                en.ts (reference), es.ts, ca.ts (typed against en.ts: a missing key is a build error)
+  scout/               ScoutApp.tsx (the replica), tour.ts (the scroll tour as a function of progress), jobs.ts (invented example offers + search)
   hooks/               line reveal, magnetic buttons, media queries, reduced motion
   lib/                 gsap registration, Lenis, asset() URL helper, media helpers
   styles/              tokens.css, global.css
-public/                docs (3 CVs), media/showreel (7 clips + posters), projects (screenshots), og.png, 404.html
+public/                docs (3 CVs), media/showreel (9 clips + posters, plus the ScoutWand screen recording), projects (screenshots), og.png, 404.html
 scripts/               process_media.py (assets -> web files), make_og.py + og/og.html (social image)
 ```
 
@@ -58,8 +59,8 @@ The base is `/showcase/` by default; override it with `VITE_BASE=/other/ npm run
 
 * **Texts:** `src/i18n/{en,es,ca}.ts`. The default language is the saved choice, then the browser language, then Spanish.
 * **Projects:** facts in `src/data/projects.ts`, text under `projects.items.<id>` in each dictionary. Only claim what the repository or README shows.
-* **ScoutWand:** copy under `scout` in the dictionaries. The window is an illustration and says so; the jobs and the person shown are examples.
-  To use a real screenshot, drop it in `public/projects/` and replace the mock window in `src/components/ScoutWand.tsx`.
+* **ScoutWand:** captions under `scout` in the dictionaries. The window itself is English-only because the real app is. The offers, companies and the person (`src/scout/jobs.ts`) are invented examples and the caption says so; keep it that way.
+* **Showreel clips:** add the id to `CLIP_IDS` in `src/data/showreel.ts`, the files `public/media/showreel/<id>.mp4` and `.webp`, an entry in `__clips__` of `src/data/mediaManifest.json`, and title + description under `showreel.clips` in all three dictionaries.
 * **Stack:** `src/data/stack.ts`; each item is `used` (visible in a public repo or this site), `listed` (CV only) or `learning`.
 * **CV:** replace the PDFs in `public/docs/` keeping the names `Adil_Chainakh_CV_{Es,En,Ca}.pdf`. `python3 scripts/update_cv_qr.py <address>` rebuilds them from `scripts/cv_originals/` with a new QR code, portfolio link and a line of selectable text showing the address.
 * **Social image:** `CHROMIUM_PATH=/path/to/chrome python3 scripts/make_og.py`.
@@ -72,7 +73,7 @@ The code lives in the repository `adil-zero-one/showcase`; GitHub serves the bui
 1. Create the empty public repository `showcase` on GitHub (no README, no .gitignore, no license).
 2. In this folder: `git init -b main`, `git add -A`, `git commit -m "Portfolio"`, `git remote add origin https://github.com/adil-zero-one/showcase.git`, `git push -u origin main`.
 3. Repo Settings, Pages, Source: **GitHub Actions**. Re-run the workflow from the Actions tab if the first run finished before you changed the setting.
-4. The site goes live at <https://adil-zero-one.github.io/showcase/>  or in your github repo a minute later.
+4. The site goes live at <https://adil-zero-one.github.io/showcase/> a minute later.
 
 The repository address (`.git`) is only for `git`; the address people open, and the one in the CV QR code, is the site address above.
 A different repository name needs `VITE_BASE=/name/` (default in `vite.config.ts`), the addresses in `index.html`, `src/data/site.ts` and `public/404.html`, and `python3 scripts/update_cv_qr.py <site address>`.

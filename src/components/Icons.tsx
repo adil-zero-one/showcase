@@ -11,3 +11,7 @@ export const GitHub = () => (<svg viewBox="0 0 24 24" fill="currentColor" aria-h
 export const LinkedIn = () => (<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4V21H3V9.75zM9.5 9.75h3.83v1.54h.05c.53-1 1.84-2.06 3.79-2.06 4.05 0 4.8 2.66 4.8 6.12V21h-4v-4.9c0-1.17-.02-2.67-1.63-2.67-1.63 0-1.88 1.27-1.88 2.59V21h-4V9.75z" /></svg>);
 export const Check = () => (<svg {...base}><path d="m5 12.5 4.5 4.5L19 7.5" /></svg>);
 export const Pause = () => (<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M7 5h4v14H7zM13 5h4v14h-4z" /></svg>);
+export const SkipBack = () => (<svg {...base}><path d="M6 5v14M19 5v14L9 12z" /></svg>);
+export const SkipForward = () => (<svg {...base}><path d="M18 5v14M5 5v14l10-7z" /></svg>);
+export const Volume = () => (<svg {...base}><path d="M4 9.5v5h3.5L12 18V6L7.5 9.5zM16 9a4 4 0 0 1 0 6M18.5 6.5a8 8 0 0 1 0 11" /></svg>);
+export const VolumeOff = () => (<svg {...base}><path d="M4 9.5v5h3.5L12 18V6L7.5 9.5zM17 9.5l4 5M21 9.5l-4 5" /></svg>);

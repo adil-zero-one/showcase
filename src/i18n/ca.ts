@@ -16,7 +16,7 @@ export const ca: Dict = {
     newTab: '(s’obre en una pestanya nova)',
     portrait: 'Retrat d’Adil Chainakh. En moure el punter per sobre es revela una capa de codi.',
     loading: 'Carregant el portfoli',
-    demo: 'Il·lustració animada del flux de ScoutWand: s’escriu una cerca, apareixen ofertes de feina i un formulari s’omple sol amb les dades d’un CV.',
+    demo: 'Rèplica interactiva de la finestra de ScoutWand. En fer scroll es veu com s’escriu una cerca, arriben ofertes i s’executa l’emplenament automàtic. També la pots fer servir tu.',
     drag: 'Arrossega cap als costats per veure’n més',
   },
 
@@ -37,7 +37,7 @@ export const ca: Dict = {
 
   hero: {
     role: 'Desenvolupador backend i motion designer',
-    place: 'Reus, Espanya',
+    place: 'Tarragona, Espanya',
     intro: 'Construeixo la lògica darrere de les aplicacions web i el moviment que les fa sentir vives. Estudio DAW a Reus i publico la meva pròpia aplicació d’escriptori.',
     ctaWork: 'Mira la meva feina',
     ctaContact: 'Digues hola',
@@ -50,7 +50,7 @@ export const ca: Dict = {
     statement: 'Escric la lògica que sosté una aplicació, i m’importa igual com es mou, com es llegeix i què se sent la primera vegada que algú l’obre.',
     facts: [
       'idiomes de treball',
-      'peces de motion al showreel',
+      'clips al showreel',
       'repositoris públics',
       'aplicació d’escriptori publicada',
     ],
@@ -86,25 +86,15 @@ export const ca: Dict = {
       appTech: 'Python',
     },
     cta: 'Visita scoutwand.com',
-    caption: 'Il·lustració del flux. Les ofertes mostrades són exemples, no dades reals.',
-    mock: {
-      query: 'Desenvolupador web júnior, PHP o Laravel',
-      where: 'Tarragona, Reus, Barcelona',
-      search: 'Rastreja',
-      matches: 'coincidències',
-      apply: 'Sol·licita',
-      fromCv: 'Omplert des del teu CV',
-      name: 'Nom',
-      city: 'Localitat',
-      phone: 'Telèfon',
-      review: 'Tu revises. Tu prems sol·licita.',
-      titles: [
-        'Desenvolupador backend júnior',
-        'Desenvolupador Laravel, júnior',
-        'Desenvolupador web PHP',
-        'Desenvolupador web en pràctiques',
-      ],
-    },
+    caption: 'Feta per a aquesta web a partir de captures de l’app real. Les ofertes i la persona són exemples inventats, no dades reals.',
+    hint: 'Fes scroll per veure-la funcionar.',
+    tryIt: 'Prova-la: escriu una feina, marca un portal i prem Search.',
+    control: 'Ara és teva: escriu una feina, marca un portal i prem Search.',
+    replay: 'Tornar al recorregut amb scroll',
+    tryBtn: 'Prova-la tu',
+    watchDemo: 'Veure la demo',
+    realApp: 'Veure l’app real',
+    realAppNote: 'Una gravació de pantalla de l’app ScoutWand real cercant i emplenant formularis. La finestra de dalt és una rèplica feta per a aquesta pàgina.',
   },
 
   stack: {
@@ -139,7 +129,7 @@ export const ca: Dict = {
       photoshop: 'Tres dissenys de bàner al projecte de bàners; Photoshop també consta al meu CV.',
       aftereffects: 'Animació del bàner i les peces de motion del showreel.',
       premiere: 'Indicada al meu CV.',
-      motion: 'Set clips al showreel, d’animació estil producte a gràfics de mapa.',
+      motion: 'Nou clips al showreel, d’animació estil producte a gràfics de mapa.',
     },
   },
 
@@ -309,19 +299,39 @@ export const ca: Dict = {
   showreel: {
     title: 'El moviment no és decoració. És comunicació.',
     intro:
-      'Set peces del meu treball audiovisual, d’animació estil producte a gràfics de mapa i tutorials de pantalla editats. No es reprodueix res fins que premis play.',
+      'Nou clips del meu treball audiovisual. Comença pel showreel i tria després qualsevol clip: el reproductor es queda a la vista mentre tries.',
     play: 'Reprodueix',
     pause: 'Pausa',
     playClip: 'Reprodueix «{title}»',
     chapters: 'Clips',
     nowShowing: 'En pantalla',
     duration: 'Durada',
-    soundNote: 'Els clips es reprodueixen sense so. Fes servir el botó de l’altaveu del reproductor per activar-lo.',
+    soundNote: 'Els clips comencen sense so. Fes servir el botó de so sota el reproductor.',
+    captions: 'Subtítols',
+    capNames: { en: 'Anglès', es: 'Castellà', ca: 'Català' },
+    featured: 'Destacat',
+    inSpanish: 'En castellà',
+    appDemo: 'Demo de l’app',
+    soundOn: 'Activar so',
+    soundOff: 'Silenciar',
+    prev: 'Clip anterior',
+    next: 'Clip següent',
+    listLabel: 'Tria un clip',
     loading: 'Carregant clip…',
     error: 'No s’ha pogut carregar aquest clip. Revisa la connexió o obre el fitxer directament:',
     openFile: 'Obre l’MP4',
     timecode: 'TC',
     clips: {
+      showreel: {
+        title: 'Showreel',
+        description:
+          'Un recorregut d’un minut per allò que faig: escenes 3D, motion graphics i el treball web que hi ha al darrere, i al final com contactar-me. La locució i el text en pantalla són en castellà; hi ha subtítols en anglès, castellà i català.',
+      },
+      'scoutwand-demo': {
+        title: 'Demo de ScoutWand',
+        description:
+          'Una demo de producte de ScoutWand: una cerca en diversos portals de feina, una llista d’ofertes en directe i formularis de candidatura emplenats automàticament. El guió i el vídeo base vénen de Claude; jo he afegit les transicions i els efectes a After Effects, els efectes de so a Premiere Pro i la locució.',
+      },
       'beats-banner': {
         title: 'Bàner d’auriculars, animat',
         description:
@@ -424,7 +434,7 @@ export const ca: Dict = {
 
   footer: {
     rights: '© {year} Adil Chainakh',
-    built: 'Dissenyat i programat a mà. React, TypeScript, GSAP i WebGL.',
+    built: 'Dissenyat i construït amb React, TypeScript, GSAP i WebGL.',
     top: 'Torna amunt',
   },
 };

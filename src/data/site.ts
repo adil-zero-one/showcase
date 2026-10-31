@@ -1,7 +1,7 @@
 /** Verified contact details and links (taken from the CV, the old portfolio and scoutwand.com). */
 export const SITE = {
   name: 'Adil Chainakh',
-  email: 'jnk-izzy@live.fr',
+  email: 'adilchainakh@gmail.com',
   phone: '698 686 436',
   phoneHref: 'tel:+34698686436',
   github: 'https://github.com/adil-zero-one',

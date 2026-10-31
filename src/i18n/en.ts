@@ -19,7 +19,7 @@ export const en = {
     newTab: '(opens in a new tab)',
     portrait: 'Portrait of Adil Chainakh. Moving the pointer over it reveals a layer of code.',
     loading: 'Loading the portfolio',
-    demo: 'Animated illustration of the ScoutWand flow: a search is typed, matching job offers appear, then a form fills itself from a CV.',
+    demo: 'Interactive replica of the ScoutWand window. Scrolling plays a search being typed, offers arriving and Auto-Fill running. You can also use it yourself.',
     drag: 'Drag sideways to see more',
   },
 
@@ -40,7 +40,7 @@ export const en = {
 
   hero: {
     role: 'Backend developer and motion designer',
-    place: 'Reus, Spain',
+    place: 'Tarragona, Spain',
     intro: 'I build the logic behind web apps and the motion that makes them feel alive. Studying DAW in Reus, shipping my own desktop app.',
     ctaWork: 'See my work',
     ctaContact: 'Say hello',
@@ -53,7 +53,7 @@ export const en = {
     statement: 'I write the logic that holds an application together, and I care just as much about how it moves, how it reads and how it feels the first time someone opens it.',
     facts: [
       'languages I work in',
-      'motion pieces in the showreel',
+      'clips in the showreel',
       'public repositories',
       'desktop app, live',
     ],
@@ -89,25 +89,15 @@ export const en = {
       appTech: 'Python',
     },
     cta: 'Visit scoutwand.com',
-    caption: 'An illustration of the flow. The jobs shown are examples, not live data.',
-    mock: {
-      query: 'Junior web developer, PHP or Laravel',
-      where: 'Tarragona, Reus, Barcelona',
-      search: 'Scout',
-      matches: 'matches',
-      apply: 'Apply',
-      fromCv: 'Filled from your CV',
-      name: 'Name',
-      city: 'City',
-      phone: 'Phone',
-      review: 'You review. You press apply.',
-      titles: [
-        'Junior backend developer',
-        'Laravel developer, junior',
-        'PHP web developer',
-        'Web developer, trainee',
-      ],
-    },
+    caption: 'Built for this site from screenshots of the real app. The offers and the person are invented examples, not live data.',
+    hint: 'Scroll to watch it work.',
+    tryIt: 'Try it: type a job, tick a site, press Search.',
+    control: 'It’s yours now: type a job, tick a site, press Search.',
+    replay: 'Back to the scroll tour',
+    tryBtn: 'Try it yourself',
+    watchDemo: 'Watch the demo',
+    realApp: 'Watch the real app',
+    realAppNote: 'A screen recording of the actual ScoutWand app searching and filling real forms. The window above is a replica built for this page.',
   },
 
   stack: {
@@ -142,7 +132,7 @@ export const en = {
       photoshop: 'Three banner designs in the banners project; Photoshop is also listed on my CV.',
       aftereffects: 'Banner animation and the motion pieces in the showreel.',
       premiere: 'Listed on my CV.',
-      motion: 'Seven clips in the showreel, from product-style animation to map graphics.',
+      motion: 'Nine clips in the showreel, from product-style animation to map graphics.',
     },
   },
 
@@ -312,19 +302,39 @@ export const en = {
   showreel: {
     title: 'Motion is not decoration. It is communication.',
     intro:
-      'Seven pieces from my audiovisual work, from product-style animation to map graphics and edited screen tutorials. Nothing plays until you press play.',
+      'Nine clips from my audiovisual work. Start with the showreel, then pick any clip: the player stays in view while you choose.',
     play: 'Play',
     pause: 'Pause',
     playClip: 'Play “{title}”',
     chapters: 'Clips',
     nowShowing: 'Now showing',
     duration: 'Duration',
-    soundNote: 'Clips play muted. Use the speaker button in the player to turn sound on.',
+    soundNote: 'Clips start muted. Use the sound button under the player.',
+    captions: 'Captions',
+    capNames: { en: 'English', es: 'Spanish', ca: 'Catalan' },
+    featured: 'Featured',
+    inSpanish: 'In Spanish',
+    appDemo: 'App demo',
+    soundOn: 'Turn sound on',
+    soundOff: 'Turn sound off',
+    prev: 'Previous clip',
+    next: 'Next clip',
+    listLabel: 'Choose a clip',
     loading: 'Loading clip…',
     error: 'This clip could not be loaded. Check your connection, or open the file directly:',
     openFile: 'Open the MP4',
     timecode: 'TC',
     clips: {
+      showreel: {
+        title: 'Showreel',
+        description:
+          'A one-minute tour of what I make: 3D scenes, motion graphics and the web work behind them, ending with how to reach me. The voice-over and the on-screen text are in Spanish; captions are available in English, Spanish and Catalan.',
+      },
+      'scoutwand-demo': {
+        title: 'ScoutWand demo',
+        description:
+          'A product demo of ScoutWand: one search across job boards, a live list of offers and auto-filled application forms. The script and base video came from Claude; I added the transitions and effects in After Effects, the sound effects in Premiere Pro and the voice-over.',
+      },
       'beats-banner': {
         title: 'Headphones banner, animated',
         description:
@@ -427,7 +437,7 @@ export const en = {
 
   footer: {
     rights: '© {year} Adil Chainakh',
-    built: 'Designed and coded by hand. React, TypeScript, GSAP and WebGL.',
+    built: 'Designed and built with React, TypeScript, GSAP and WebGL.',
     top: 'Back to top',
   },
 };

@@ -61,6 +61,21 @@ export function Projects() {
           cards.forEach((c, i) => { c.style.scale = ''; const d = dims[i]; if (d) d.style.opacity = ''; });
         };
       });
+      // Phones: the cards are taller than the screen, so they do not stack. Each one rises into place as it
+      // arrives and its screenshot drifts slowly inside the frame. Both are scrubbed, so they run both ways.
+      mm.add('(max-width: 899px)', () => {
+        gsap.utils.toArray<HTMLElement>('.pcard').forEach((card) => {
+          gsap.fromTo(card, { scale: 0.92, y: 36 }, {
+            scale: 1, y: 0, ease: 'none', force3D: true,
+            scrollTrigger: { trigger: card, start: 'top 98%', end: 'top 62%', scrub: 0.4 },
+          });
+          const img = card.querySelector<HTMLElement>('.shot__base > img');
+          if (img) gsap.fromTo(img, { scale: 1.16, yPercent: -5 }, {
+            yPercent: 5, ease: 'none',
+            scrollTrigger: { trigger: card, start: 'top bottom', end: 'bottom top', scrub: true },
+          });
+        });
+      });
     }, el);
     return () => ctx.revert();
   }, [reduced]);

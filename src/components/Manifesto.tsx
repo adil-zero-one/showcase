@@ -2,10 +2,11 @@ import { useLayoutEffect, useRef } from 'react';
 import { useI18n } from '../i18n';
 import { gsap } from '../lib/gsap';
 import { useReducedMotion } from '../hooks/useReducedMotion';
+import { CLIPS } from '../data/showreel';
 import './manifesto.css';
 
 // Verifiable numbers only: languages from the CV, clips from the showreel, repos on GitHub, one live product.
-const FACTS = [5, 7, 4, 1];
+const FACTS = [5, CLIPS.length, 4, 1];
 
 /** A statement that fills in word by word as you scroll, and four counted facts. */
 export function Manifesto() {
